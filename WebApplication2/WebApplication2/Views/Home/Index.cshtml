@@ -1,0 +1,57 @@
+﻿@model Player
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<h1>
+    Главная страница
+</h1>
+
+<h2>
+    Заполните форму
+</h2>
+
+<form method ="post" asp-controller="Player" asp-action="create">
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="Surname"></label>
+    <input asp-for="Surname" />
+    <span asp-validation-for="Surname"></span>
+
+    <label asp-for="Gender"></label>
+    <select asp-for="Gender">
+        <option>Мужчина</option>
+        <option>Женщина</option>
+    </select>
+
+    <span>Введите день рождения</span>
+
+    <label asp-for="Day"></label>
+    <input asp-for="Day" />
+    <span asp-validation-for="Day"></span>
+
+    <label asp-for="Month"></label>
+    <input asp-for="Month" />
+    <span asp-validation-for="Month"></span>
+
+    <label asp-for="Year"></label>
+    <input asp-for="Year" />
+    <span asp-validation-for="Year"></span>
+
+    <label asp-for="Teamname"></label>
+    <input asp-for="Teamname" />
+    <span asp-validation-for="Teamname"></span>
+
+    <label asp-for="Country"></label>
+    <select asp-for="Country">
+        <option>Беларусь</option>
+        <option>США</option>
+        <option>ОАЭ</option>
+    </select>
+    <span asp-validation-for="Country"></span>
+     
+    <input type="submit" value = "Отправить" />
+</form>

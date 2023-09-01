@@ -1,0 +1,12 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width:15%;
+}
+
+select{
+    width:15%;
+}

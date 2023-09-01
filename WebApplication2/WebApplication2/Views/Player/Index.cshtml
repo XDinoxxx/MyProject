@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Player>
+@{
+    ViewData["Title"] = "Все игроки";
+}
+
+<h1>
+    Все игроки
+</h1>
+
+@foreach(var player in Model)
+{
+    <div class="form">
+        <div>
+        Имя: @player.Name, Фамилия: @player.Surname, Пол: @player.Gender, 
+        Дата рождения:
+        @player.Day.@player.Month.@player.Year
+        Команда: @player.Teamname
+        Страна: @player.Country
+        <a asp-action="Edit" asp-controller="Player" asp-route-id="@player.Id">Изменить</a>
+        </div>
+        <div>
+        <form asp-controller="Player" asp-action="Delete" method="post" asp-route-id="@player.Id">
+            <input type="submit" value="Удалить">
+        </form>
+        </div>
+    </div>
+}
+
